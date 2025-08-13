@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analyzer</title>
+</head>
+<body>
+    <h1>Movie Review Sentiment Analyzer</h1>
+    <form id="sentimentForm">
+        {% csrf_token %}
+        <textarea name="text" rows="4" cols="50" placeholder="Enter your movie review..."></textarea>
+        <button type="submit">Analyze</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('sentimentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            fetch('', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(new FormData(e.target))
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.sentiment) {
+                    document.getElementById('result').innerHTML = `
+                        <h3>Result: ${data.sentiment}</h3>
+                    `;
+                } else if (data.error) {
+                    document.getElementById('result').innerHTML = `
+                        <p style="color: red;">Error: ${data.error}</p>
+                    `;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

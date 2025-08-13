@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# environment
+venv/
+sentiment_app/.env
+
 # Distribution / packaging
 .Python
 build/
