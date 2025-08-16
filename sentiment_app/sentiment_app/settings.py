@@ -31,7 +31,7 @@ if not SECRET_KEY:
     raise ValueError("No SECRET_KEY set for Django application")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'sentiment-app-8ufr.onrender.com',
