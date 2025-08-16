@@ -39,6 +39,11 @@ ALLOWED_HOSTS = [
     '127.0.0.1'
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://sentiment-app-bxnb.onrender.com",
+    "http://localhost:8000",
+]
+
 
 # Application definition
 
