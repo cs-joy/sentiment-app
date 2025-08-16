@@ -34,7 +34,7 @@ if not SECRET_KEY:
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'sentiment-app-xhik.onrender.com',
+    'sentiment-app-8ufr.onrender.com',
     'localhost', 
     '127.0.0.1'
 ]
