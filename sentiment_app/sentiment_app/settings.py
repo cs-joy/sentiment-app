@@ -35,6 +35,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'sentiment-app-xhik.onrender.com',
+    'localhost', 
+    '127.0.0.1'
 ]
 
 
